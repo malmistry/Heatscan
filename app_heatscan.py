@@ -21,11 +21,15 @@ st.set_page_config(
 )
 
 # ---------------- PATHS (Malcolm: Update these paths as needed) ----------------
-TW_DIR = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/Tw_hours/output_2015_2100_5yrly_interval")
-WBGT_DIR = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/WBGT_hours/output_2015_2100_5yrly_interval")
+TW_DIR = Path("data")
+WBGT_DIR = Path("data")
+POP_PATH = Path("data/ssp2_2050.nc")
+CITIES_DATA_PATH = Path("data/cities15000.txt")
+
+#TW_DIR = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/Tw_hours/output_2015_2100_5yrly_interval")
+#WBGT_DIR = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/WBGT_hours/output_2015_2100_5yrly_interval")
 #POP_PATH = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/population/ssp2_2050.nc")
-#https://github.com/malmistry/Heatscan/tree/main/data
-CITIES_DATA_PATH = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/cities/cities15000.txt")
+#CITIES_DATA_PATH = Path("/home/lshmm22/Projects/WB/Data/Heatscan_and_SP_work/cities/cities15000.txt")
 
 # ---------------- PRIORITY CITIES FOR AFRICA ----------------
 # Malcolm: These are the 3 priority cities with their coordinates and bounding boxes.
@@ -585,4 +589,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
