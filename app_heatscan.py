@@ -21,8 +21,8 @@ st.set_page_config(
 )
 
 # ---------------- PATHS (Malcolm: Update these paths as needed) ----------------
-TW_DIR = Path("data")
-WBGT_DIR = Path("data")
+TW_DIR = Path("data/")
+WBGT_DIR = Path("data/")
 POP_PATH = Path("data/ssp2_2050.nc")
 CITIES_DATA_PATH = Path("data/cities15000.txt")
 
@@ -589,5 +589,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
