@@ -800,26 +800,28 @@ def main():
         
         ### Metric Definitions
         
-        **1. Tw (Wet-bulb Temperature)**
-        The temperature a parcel of air would have if it were cooled to saturation (100% relative humidity) by the evaporation of water into it, with the latent heat supplied by the parcel.
-        - **Hot Hours**: Hours where Tw exceeds the local 'Hot' threshold.
-        - **Lethal Hours**: Hours where Tw exceeds the theoretical limit of human survival (approx 35°C), or defined local lethal threshold.
+        **1. Tw (Wet-bulb Temperature - Units °C)**
+        The temperature a parcel of air would have if it were cooled to saturation (100% relative humidity) by the evaporation of water into it, with the latent heat supplied by the parcel. Tw accounts only for air temperature and humidity, and is thus an indoor heat stress metric.
+        - **Hot Hours**: Hours where Tw exceeds 30.6 °C. Following Vecellio et al., 2023, this threshold is referred to as uncompensable heat or human survivability limit. Also referred to as the theoretical physiological limit to heat adaptation. Note that this threshold is for an average healthy young adult, and the threshold would be lower for vulnerable people. The threshold also reduces linearly at locations with air temperature exceeding 40°C (referred to as dry hot regions). See Vecellio et al., 2023 for further details.
+
+        - **Lethal Hours**: Hours where Tw > 30.6°C for at least 6 consecutive hours in a day. Can lead to heatstroke even for an average healthy adult wearing light clothing and at rest.
         
-        **2. WBGT (Wet Bulb Globe Temperature)**
-        A composite temperature used to estimate the effect of temperature, humidity, wind speed (wind chill), and visible and infrared radiation (usually sunlight) on humans.
-        - **MHS (WBGT ≥ 30°C)**: Moderate Heat Stress.
-        - **SHS (WBGT ≥ 33°C)**: Severe Heat Stress.
-        - **EHS (WBGT ≥ 35°C)**: Extreme Heat Stress.
+        **2. WBGT (Wet Bulb Globe Temperature  - Units °C)**
+        A composite outdoor heat stress metric used to estimate the effect of temperature, humidity, wind speed, and solar radiation on humans. Commonly used as a heat stress metric in assessing labour productivity. Following Brimicombe et al., 2023 and Mishra et al., 2025, the following three definitions are used for computing the unworkable hours. 
+        - **MHS hours (WBGT ≥ 30°C & < 33 °C)**: Moderate Heat Stress. High intensity labour conducted by acclimatized adults in light clothing should be moderated with frequent breaks.
+        - **SHS hours (WBGT ≥ 33°C & < 35 °C)**: Severe Heat Stress. Same assumptions as in MHS, but  work activities should be severely limited or stopped
+        - **EHS hours (WBGT ≥ 35°C)**: Extreme Heat Stress. Lethal or extreme heat stress. No outdoor physical activity should be undertaken and health conditions of individuals to be monitored, as this threshold when exceeded can be fatal.
         
         ### Methodology
-        Data is derived from climate models (SSP2-RCP4.5 Scenario) processed to extract annual, quarterly, and monthly aggregates.
+        The Tw and WBGT global gridded data at 0.25 deg resolution (~30km x 30km at the equator) from CMIP6 downscaled models covering 2015-2100 in the SSP245 scenario at 3-hourly time steps, as well as the SSP2 projected population for 2050 at a global gridded scale of 0.125 deg (~15km x 15km at the equator), were both provided by the authors of the Vecellio et al., 2023 study. The sub-daily files for each year were processed to derive weekly, monthly, quarterly and annual number of hours exceeding the above threshold.
         
-        - **Person-Hours**: The metric multiplied by the local population count, representing total human exposure.
-        - **Gridded Data**: Raw model output at 0.5° resolution.
+        - **Person-Hours**: The metric multiplied by the local population count, representing location-specific total human exposure at the above sub-annual/annual timescales.
         - **Cities**: Aggregated at city locations (GeoNames database).
         - **National/Regional**: Spatially aggregated over administrative boundaries.
-        """)
+	- **References**: (i) Brimicombe et al., 2023: https://doi.org/10.1029/2022GH000701, (ii) Mishra et al., 2025: https://doi.org/10.1029/2025EF006167, Vecellio et al., 2023: : https://doi.org/10.1073/pnas.2305427120
 
+        """)
 
 if __name__ == "__main__":
     main()
+
