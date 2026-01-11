@@ -800,10 +800,10 @@ def main():
         
         ### Metric Definitions
         
-        **1. Tw (Wet-bulb Temperature)**
-        The temperature a parcel of air would have if it were cooled to saturation (100% relative humidity) by the evaporation of water into it, with the latent heat supplied by the parcel.
-        - **Hot Hours**: Hours where Tw exceeds the local 'Hot' threshold.
-        - **Lethal Hours**: Hours where Tw exceeds the theoretical limit of human survival (approx 35°C), or defined local lethal threshold.
+        **1. Tw (Wet-bulb Temperature - Units °C)**
+        The temperature a parcel of air would have if it were cooled to saturation (100% relative humidity) by the evaporation of water into it, with the latent heat supplied by the parcel. Tw accounts only for air temperature and humidity, and is thus an indoor heat stress metric.
+        - **Hot Hours**: Hours where Tw exceeds 30.6 °C. Following Vecellio et al., 2023, this threshold is referred to as uncompensable heat or human survivability limit. Also referred to as the theoretical physiological limit to heat adaptation. Note that this threshold is for an average healthy young adult, and the threshold would be lower for vulnerable people. The threshold also reduces linearly at locations with air temperature exceeding 40°C (referred to as dry hot regions). See Vecellio et al., 2023 for further details.
+        - **Lethal Hours**: Hours where Tw > 30.6°C for at least 6 consecutive hours in a day. Can lead to heatstroke even for an average healthy adult wearing light clothing and at rest.
         
         **2. WBGT (Wet Bulb Globe Temperature)**
         A composite temperature used to estimate the effect of temperature, humidity, wind speed (wind chill), and visible and infrared radiation (usually sunlight) on humans.
@@ -823,3 +823,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
