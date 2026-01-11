@@ -817,12 +817,14 @@ def main():
         - **Person-Hours**: The metric multiplied by the local population count, representing location-specific total human exposure at the above sub-annual/annual timescales.
         - **Cities**: Aggregated at city locations (GeoNames database).
         - **National/Regional**: Spatially aggregated over administrative boundaries.
+        - **References**: (i) Brimicombe et al., 2023: https://doi.org/10.1029/2022GH000701, (ii) Mishra et al., 2025: https://doi.org/10.1029/2025EF006167, Vecellio et al., 2023: : https://doi.org/10.1073/pnas.2305427120
 
         """)
 
 
 if __name__ == "__main__":
     main()
+
 
 
 
