@@ -1105,7 +1105,7 @@ def main():
         - **EHS hours (WBGT ≥ 35°C)**: Extreme Heat Stress. Lethal or extreme heat stress. No outdoor physical activity should be undertaken and health conditions of individuals to be monitored, as this threshold when exceeded can be fatal.
         
         ### Methodology
-        The Tw and WBGT global gridded data at 0.25 deg resolution (~30km x 30km at the equator) from CMIP6 downscaled models covering 2015-2100 in the SSP245 scenario at 3-hourly time steps, as well as the SSP2 projected population for 2050 at a global gridded scale of 0.125 deg (~15km x 15km at the equator), were both provided by the authors of the Vecellio et al., 2023 study. The sub-daily files for each year were processed to derive weekly, monthly, quarterly and annual number of hours exceeding the above threshold.
+        The Tw and WBGT global gridded data at 0.25 deg resolution (~30km x 30km at the equator) from CMIP6 downscaled models covering 2015-2100 in the SSP245 scenario at 3-hourly time steps, as well as the SSP2 projected population for 2050 at a global gridded scale of 0.125 deg (~15km x 15km at the equator), were both shared by the authors of the Vecellio et al., 2023 study. At the moment, the results shown here are based on the data from HadGEM3-GC31-LL global climate model. The sub-daily files for each year were processed to derive weekly, monthly, quarterly and annual number of hours exceeding the above threshold.
         
         - **Person-Hours**: The metric multiplied by the local population count, representing location-specific total human exposure at the above sub-annual/annual timescales.
         - **Cities**: Aggregated at city locations (GeoNames database).
@@ -1115,8 +1115,13 @@ def main():
         (ii) Mishra et al., 2025: https://doi.org/10.1029/2025EF006167, 
         (iii) Vecellio et al., 2023: : https://doi.org/10.1073/pnas.2305427120
 
+        ### Acknowledgement and Disclaimer
+
+        - **The developer of this dashboard is grateful to Dr. Qinqin Kong (co-author of Vecellio et al., 2023) for sharing the underlying climate model projections. All analysis and results produced in this app are undertaken by the developer of this dashboard following the methodology in the cited studies.**:
+
         """)
 
 if __name__ == "__main__":
     main()
+
 
