@@ -22,10 +22,10 @@ st.set_page_config(
 )
 
 # ---------------- PATHS (Malcolm: Update these paths as needed) ----------------
-TW_DIR = Path("/content/drive/MyDrive/output/Tw_output_2015_2020_2025")
-WBGT_DIR = Path("/content/drive/MyDrive/output/WBGT_output_2015_2020_2025")
-POP_PATH = Path("/content/drive/MyDrive/Project/pop_ssp245_2050/ssp2_2050.nc")
-CITIES_DATA_PATH = Path("/content/drive/MyDrive/cities15000.txt")
+TW_DIR = Path("data")
+WBGT_DIR = Path("data")
+POP_PATH = Path("data/ssp2_2050.nc")
+CITIES_DATA_PATH = Path("data/cities15000.txt")
 
 # ---------------- PRIORITY CITIES FOR AFRICA ----------------
 # Malcolm: These are the 3 priority cities with their coordinates and bounding boxes.
@@ -827,6 +827,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
