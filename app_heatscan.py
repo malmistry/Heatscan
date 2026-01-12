@@ -716,7 +716,7 @@ def main():
         
         person_hours = st.sidebar.checkbox("Person × Hours", value=False)
         timescale = st.sidebar.selectbox("Aggregation Period", ["annual", "quarterly", "monthly"], format_func=lambda x: x.capitalize())
-        year = st.sidebar.slider("Year", min_value=2015, max_value=2025, value=2025, step=5)
+        year = st.sidebar.slider("Year", min_value=2025, max_value=2100, value=2025, step=5)
         
         # Updated Display Modes Order and Naming
         display_mode = st.sidebar.radio(
@@ -1119,3 +1119,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
